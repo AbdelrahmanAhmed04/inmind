@@ -1,4 +1,14 @@
 :root {
+  --primary-dark: #1e1e1e;
+  --primary-light: #e2e2e2;
+  --primary-red: #f10505;
+  --default-font: "Poppins", sans-serif;
+  --active-cyan: #00ffe1;
+}
+body {
+  margin: 0;
+}
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +75,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
