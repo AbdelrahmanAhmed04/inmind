@@ -1,0 +1,50 @@
+:root {
+  --scroll-background: var(--primary-light);
+  --scroll-text-font: var(--default-font-2);
+  --scroll-subtext-font: var(--default-font);
+  --scroll-color: var(--primary-dark);
+}
+.scroll-wrapper {
+  background: var(--scroll-background);
+
+  padding-top: 30vh; /* acts like your -30% start */
+}
+.scroll-section {
+  height: 100vh; /* full screen height */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--scroll-background);
+}
+
+.scroll-track {
+  padding: 8vw 50vw 8vw 70vw;
+  display: flex;
+  font-family: var(--scroll-text-font);
+  color: var(--scroll-color);
+  font-size: 6vw;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.scroll-subtext {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 1.4vw;
+  font-family: var(--scroll-subtext-font);
+  color: var(--scroll-color);
+
+  text-align: center;
+  p {
+    width: 50%;
+    line-height: 140%;
+    font-weight: 400;
+  }
+}
+
+.letter {
+  margin: 0;
+  padding: 0;
+}

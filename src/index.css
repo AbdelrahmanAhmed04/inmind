@@ -2,8 +2,11 @@
   --primary-dark: #1e1e1e;
   --primary-light: #e2e2e2;
   --primary-red: #f10505;
-  --default-font: "Poppins", sans-serif;
   --active-cyan: #00ffe1;
+  --default-title: "Roboto", sans-serif;
+  --default-subtitle: "Roboto Mono", sans-serif;
+  --default-font-2: "Epilogue", sans-serif;
+  --default-font: "Poppins", sans-serif;
 }
 body {
   margin: 0;

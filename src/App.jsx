@@ -1,51 +1,39 @@
-import { useState } from "react";
+import { useRef, useState, useLayoutEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar.jsx";
 import HeroSection from "./components/hero/Hero.jsx";
+import HorizontalScroll from "./components/horizontal-scroll/HorizontalScroll.jsx";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 function App() {
+  var wrapperRef = useRef();
+  var containerRef = useRef();
+  useLayoutEffect(() => {
+    const smoother = ScrollSmoother.create({
+      wrapper: wrapperRef.current,
+      content: containerRef.current,
+      smooth: 0.4,
+
+      effects: true,
+    });
+
+    return () => smoother.kill();
+  }, []);
   return (
     <>
-      <Navbar />
-      <HeroSection />
+      <div className="smooth-wrapper" ref={wrapperRef}>
+        <div className="smooth-container" ref={containerRef}>
+          <Navbar />
+          <HeroSection />
+          <HorizontalScroll />
+        </div>
+      </div>
     </>
   );
 }
 
 export default App;
-
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import "./App.css";
-
-// function App() {
-//   const [count, setCount] = useState(0);
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   );
-// }
-
-// export default App;
